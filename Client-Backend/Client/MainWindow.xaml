@@ -1,0 +1,33 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Frame Content="" Source="/Client;component/Pages/LoginPage.xaml" NavigationUIVisibility="Hidden" Margin="0,0,0,360"/>
+        <ListBox x:Name="lbPrivate" Margin="15,151,619,65" Height="auto" Width="auto"/>
+        <TextBlock x:Name="tbxPersonalList" HorizontalAlignment="Left" Margin="46,131,0,0" Text="Personal music list" TextWrapping="Wrap" VerticalAlignment="Top" Height="13"/>
+        <ListBox x:Name="lbGroup" Margin="198,151,477,11" SelectionChanged="lbGroup_SelectionChanged" Height="auto" Width="auto"/>
+        <TextBlock HorizontalAlignment="Left" Margin="237,130,0,0" Text="Group" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <ListBox x:Name="lbSong" Margin="366,151,309,11" Height="auto" Width="auto"/>
+        <TextBlock HorizontalAlignment="Left" Margin="414,130,0,0" Text="Song" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="332,276,0,0" Text="--&gt;" TextWrapping="Wrap" VerticalAlignment="Top" Height="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="332,266,0,0" Text="--&gt;" TextWrapping="Wrap" VerticalAlignment="Top" Height="13"/>
+        <TextBlock HorizontalAlignment="Left" Margin="332,287,0,0" Text="--&gt;" TextWrapping="Wrap" VerticalAlignment="Top" Height="14"/>
+        <Button x:Name="btnPlaySong" Content="Play" HorizontalAlignment="Left" Margin="511,252,0,0" VerticalAlignment="Top" Width="60" Click="btnPlaySong_Click" Height="30"/>
+        <MediaElement x:Name="mainMediaElement" HorizontalAlignment="Left" Height="17" Margin="341,151,0,0" VerticalAlignment="Top" Width="19" MediaOpened="mainMediaElement_MediaOpened" LoadedBehavior="Manual"/>
+        <TextBlock x:Name="tbxNameSong" HorizontalAlignment="Left" Margin="15,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="308"/>
+        <Slider x:Name="timelineSlider" HorizontalAlignment="Left" Margin="15,110,0,0" VerticalAlignment="Top" Width="255" ValueChanged="timelineSlider_ValueChanged"/>
+        <Slider x:Name="volSlider" HorizontalAlignment="Left" Margin="366,109,0,0" VerticalAlignment="Top" Width="125" Value="0.5" Maximum="1" ValueChanged="volSlider_ValueChanged"/>
+        <TextBlock x:Name="tbxVol" HorizontalAlignment="Left" Margin="341,111,0,0" Text="Vol" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.675,0.184"/>
+        <Button x:Name="btnPause" Content="| |" HorizontalAlignment="Left" Margin="379,74,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="btnPause_Click"/>
+        <Button x:Name="btnPlay" Content="▶" HorizontalAlignment="Left" Margin="404,74,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="btnPlay_Click"/>
+        <Button x:Name="btnStop" Content="◼" HorizontalAlignment="Left" Margin="429,74,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="btnStop_Click"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="511,295,0,0" VerticalAlignment="Top" Height="30" Width="60" Click="btnReset_Click"/>
+        <TextBlock x:Name="tbxTimer" HorizontalAlignment="Left" Margin="275,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="btnLoadPersonalList" Content="Load personal music list" HorizontalAlignment="Left" Margin="19,369,0,0" VerticalAlignment="Top" Height="30" Width="150" Click="btnLoadPersonalList_Click"/>
+    </Grid>
+</Window>
