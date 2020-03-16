@@ -1,0 +1,21 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>img</title>
+</head>
+<body>
+    <form asp-controller="img" asp-action="uploadfile" method="post"
+          enctype="multipart/form-data">
+
+        <input type="file" name="file" />
+        <button type="submit">upload file</button>
+    </form>
+</body>
+</html>
