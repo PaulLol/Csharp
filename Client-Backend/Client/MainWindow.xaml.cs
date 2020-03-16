@@ -97,9 +97,35 @@ namespace Client
         private void btnPlaySong_Click(object sender, RoutedEventArgs e)
         {
             string songpath;
-
-            if (lbSong.SelectedItem != null && lbGroup.SelectedItem != null)
+            if (lbPrivate.SelectedItem != null)
             {
+                timelineSlider.Value = 0;
+                VisibleElements();
+
+                for (int i = 0; i < lbPrivate.Items.Count; i++)
+                {
+                    if (Global.LoggedInUser.PersonalMusic[i] == lbPrivate.SelectedItem.ToString())
+                    {
+                        mainMediaElement.Source = null;
+
+                        MusicOperations mo = new MusicOperations();
+                        string selectMusic = lbPrivate.SelectedItem.ToString();
+                        //string filetype = selectMusic.Remove(0, selectMusic.Length -3)
+                        byte[] filesong = mo.DownloadPrivateFile(Global.LoggedInUser.PersonalMusicId[i], Global.LoggedInUser.PersonalMusicFileType[i]);
+                        songpath = startupPath + selectMusic;
+                        File.WriteAllBytes(songpath, filesong);
+
+
+                        tbxNameSong.Text = lbPrivate.SelectedItem.ToString();
+                        mainMediaElement.Source = new Uri(songpath);
+                        mainMediaElement.Play();
+                    }
+                }
+            }
+            else if (lbSong.SelectedItem != null && lbGroup.SelectedItem != null)
+            {
+                mainMediaElement.Source = null;
+
                 timelineSlider.Value = 0;
                 VisibleElements();
 
@@ -116,31 +142,10 @@ namespace Client
                 mainMediaElement.Source = new Uri(songpath);
                 mainMediaElement.Play();
             }
-            else if (lbPrivate.SelectedItem != null)
-            {
-                timelineSlider.Value = 0;
-                VisibleElements();
-
-                for (int i = 0; i < lbPrivate.Items.Count; i++)
-                {
-                    if (Global.LoggedInUser.PersonalMusic[i] == lbPrivate.SelectedItem.ToString())
-                    {
-                        MusicOperations mo = new MusicOperations();
-                        string selectMusic = lbPrivate.SelectedItem.ToString();
-                        //string filetype = selectMusic.Remove(0, selectMusic.Length -3)
-                        byte[] filesong = mo.DownloadPrivateFile(Global.LoggedInUser.PersonalMusicId[i], Global.LoggedInUser.PersonalMusicFileType[i]);
-                        songpath = startupPath + selectMusic;
-                        File.WriteAllBytes(songpath, filesong);
-
-
-                        tbxNameSong.Text = lbPrivate.SelectedItem.ToString();
-                        mainMediaElement.Source = new Uri(songpath);
-                        mainMediaElement.Play();
-                    }
-                }
-            }
-
             else MessageBox.Show("Choose group and song!");
+
+            lbSong.SelectedIndex = -1;
+            lbPrivate.SelectedIndex = -1;
         }
 
         private void btnPause_Click(object sender, RoutedEventArgs e)
