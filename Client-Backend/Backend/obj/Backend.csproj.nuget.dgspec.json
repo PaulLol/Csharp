@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Paul\\Desktop\\Main Project\\App\\Backend\\Backend.csproj": {}
+    "D:\\Test\\Client-Backend\\App\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Paul\\Desktop\\Main Project\\App\\Backend\\Backend.csproj": {
+    "D:\\Test\\Client-Backend\\App\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Paul\\Desktop\\Main Project\\App\\Backend\\Backend.csproj",
+        "projectUniqueName": "D:\\Test\\Client-Backend\\App\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\Paul\\Desktop\\Main Project\\App\\Backend\\Backend.csproj",
+        "projectPath": "D:\\Test\\Client-Backend\\App\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\Paul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Paul\\Desktop\\Main Project\\App\\Backend\\obj\\",
+        "outputPath": "D:\\Test\\Client-Backend\\App\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

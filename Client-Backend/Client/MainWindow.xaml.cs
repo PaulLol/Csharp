@@ -233,6 +233,7 @@ namespace Client
         }
         public void LoadToPrivateListBox()
         {
+            lbPrivate.Items.Clear();
             try
             {
                 UsersOperations ops = new UsersOperations();

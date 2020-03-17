@@ -144,6 +144,12 @@ namespace Client.Operations
                 user.PersonalMusicFileType = new List<string>();
                 user.PersonalMusicFileType.Add(fileType);
             }
+            else
+            {
+                user.PersonalMusic.Add(music);
+                user.PersonalMusicId.Add(idMusic);
+                user.PersonalMusicFileType.Add(fileType);
+            }
 
             string json = JsonConvert.SerializeObject(user);
 
