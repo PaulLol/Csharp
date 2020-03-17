@@ -7805,11 +7805,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Test\\Client-Backend\\App\\Backend\\Backend.csproj",
+      "projectUniqueName": "D:\\Repository\\Csharp\\Client-Backend\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "D:\\Test\\Client-Backend\\App\\Backend\\Backend.csproj",
+      "projectPath": "D:\\Repository\\Csharp\\Client-Backend\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\Paul\\.nuget\\packages\\",
-      "outputPath": "D:\\Test\\Client-Backend\\App\\Backend\\obj\\",
+      "outputPath": "D:\\Repository\\Csharp\\Client-Backend\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

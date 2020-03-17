@@ -31,6 +31,7 @@ namespace Client
         public string startupPath = Directory.GetCurrentDirectory() + "/Music/";
         public MainWindow()
         {
+            Directory.CreateDirectory(startupPath);
             InitializeComponent();
         }
 
